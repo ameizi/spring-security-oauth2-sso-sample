@@ -1,0 +1,16 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: auth server application
+    version: 1.0
+
+oa:
+  profile-uri: http://localhost:8080/oa/system/profile
+
+crm:
+  profile-uri: http://localhost:8090/crm/system/profile
+
+
+

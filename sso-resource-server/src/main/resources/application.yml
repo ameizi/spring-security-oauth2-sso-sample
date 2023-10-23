@@ -1,0 +1,16 @@
+server:
+  port: 9080
+  servlet:
+    context-path: /ops
+
+security:
+  oauth2:
+    # OAuth2 Client 配置，对应 OAuth2ClientProperties 类
+    client:
+      client-id: ops
+      client-secret: ops_secret
+      access-token-uri: http://localhost:8888/oauth/token # 访问令牌的地址
+      user-authorization-uri: http://localhost:8888/oauth/authorize # 用户的授权码地址
+    # OAuth2 Resource 配置，对应 ResourceServerProperties 类
+    resource:
+      token-info-uri: http://localhost:8888/oauth/check_token # 校验访问令牌是否有效的地址

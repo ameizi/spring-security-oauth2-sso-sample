@@ -1,0 +1,26 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /oa
+
+spring:
+  application:
+    name: oa application
+    version: 1.0
+
+security:
+  oauth2:
+    # OAuth2 Client 配置，对应 OAuth2ClientProperties 类
+    client:
+      client-id: oa
+      client-secret: oa_secret
+      access-token-uri: http://localhost:8888/oauth/token # 获取访问令牌的地址
+      user-authorization-uri: http://localhost:8888/oauth/authorize # 获取用户的授权码地址
+    # OAuth2 Resource 配置，对应 ResourceServerProperties 类
+    resource:
+      jwt:
+        key-uri: http://localhost:8888/oauth/token_key
+      token-info-uri: http://localhost:8888/oauth/check_token # 校验访问令牌是否有效的地址
+
+crm:
+  profile-uri: http://localhost:8090/crm/system/profile
